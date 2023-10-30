@@ -9,6 +9,8 @@
         "sourceType": "module"
     },
     "rules": {
-        "no-restricted-exports": "off"
+        "no-restricted-exports": "off",
+        "no-use-before-define": "off",
+        "react/prop-types": "off"
     }
 }
