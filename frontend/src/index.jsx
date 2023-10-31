@@ -7,11 +7,13 @@ import App from './App';
 import './assets/styles/index.css';
 import './assets/styles/bootstrap.custom.css';
 import HomeScreen from './screens/home-screen';
+import ProductScreen from './screens/product-screen';
 
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<App />}>
       <Route index path="/" element={<HomeScreen />} />
+      <Route path="/product/:id" element={<ProductScreen />} />
     </Route>,
   ),
 );
