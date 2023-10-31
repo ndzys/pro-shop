@@ -11,6 +11,7 @@
     "rules": {
         "no-restricted-exports": "off",
         "no-use-before-define": "off",
-        "react/prop-types": "off"
+        "react/prop-types": "off",
+        "no-nested-ternary": "off"
     }
 }
