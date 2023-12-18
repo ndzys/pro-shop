@@ -1,7 +1,10 @@
 import React from 'react';
 import { Row, Col } from 'react-bootstrap';
+
 import { useGetProductsQuery } from '../../slices/productsSlice';
 import Product from '../../components/product';
+import Loader from '../../components/loader';
+import Message from '../../components/message';
 
 export default function HomeScreen() {
   const {
@@ -9,14 +12,14 @@ export default function HomeScreen() {
   } = useGetProductsQuery();
   return (
     <>
-      {isLoading && <h2>Loading...</h2>}
-      {isError && (<h2>An error occured</h2>)}
+      {isLoading && <Loader />}
+      {isError && (<Message variant="danger">An error occurred</Message>)}
       {isSuccess && (
       <>
         <h1>Latest Products</h1>
         <Row>
           {products.map((product) => (
-            <Col key={product.id} sm="12" md="6" lg="4" xl="3">
+            <Col key={product._id} sm="12" md="6" lg="4" xl="3">
               <Product product={product} />
             </Col>
           ))}
